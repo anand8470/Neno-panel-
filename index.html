@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Panel</title>
+<meta charset="UTF-8">
+<style>
+body{
+    font-family: Arial;
+    background: #111;
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+}
+input{
+    padding: 10px;
+    font-size: 20px;
+    width: 200px;
+}
+button{
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+</style>
+</head>
+<body>
+<h2>Prediction Panel</h2>
+<input id="num" type="number" placeholder="Enter period number">
+<br>
+<button onclick="predict()">Predict</button>
+<p id="result"></p>
+
+<script>
+function predict(){
+    let n = document.getElementById("num").value;
+    if(!n){
+        document.getElementById("result").innerHTML = "Enter number!";
+        return;
+    }
+    let out = Math.floor(Math.random()*10);
+    document.getElementById("result").innerHTML = "Next Number: " + out;
+}
+</script>
+</body>
+</html>
